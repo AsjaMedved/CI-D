@@ -1,0 +1,32 @@
+{
+  "name": "7.6.1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+
+     "cy:run:chrome": "cypress run --browser chrome",
+     "cy:run:firefox": "cypress run --browser firefox",
+     "cy:run:Safari": "cypress run --browser Safari",
+
+     "cy:folder1": "cypress run --spec 'cypress/e2e/folder1/**/*.cy.js'",
+     "cy:folder2": "cypress run --spec 'cypress/e2e/folder2/**/*.cy.js'",
+     
+     "cy:parallel-folders": "npx npm-run-all --parallel cy:folder1 cy:folder2",
+
+     "cy:Admin": "cypress run --group admin --parallel --ci-build-id 2 --spec cypress/e2e/folder1/Admin.cy.js --record --key c9361249-ac10-40b7-b490-80765431f2fd",
+     "cy:Client": "cypress run --group client --parallel --ci-build-id 2 --spec cypress/e2e/folder1/Client.cy.js --record --key c9361249-ac10-40b7-b490-80765431f2fd",
+     "cy:Films": "cypress run --group films --parallel --ci-build-id 2 --spec cypress/e2e/folder1/Films.cy.js --record --key c9361249-ac10-40b7-b490-80765431f2fd",
+     "cy:Cinema": "cypress run --group сinema --parallel --ci-build-id 2 --spec cypress/e2e/folder2/LetsGoToTheCinema.cy.js --record --key c9361249-ac10-40b7-b490-80765431f2fd",
+
+     "cy:all-parallel": "npx npm-run-all --parallel cy:Admin cy:Client cy:Films cy:Cinema"
+},
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.5.4",
+    "npm-run-all": "^4.1.5"
+  }
+}
